@@ -1,12 +1,146 @@
+.header-unit {
+  height: 150px;
+  border: 2px solid #000;
+  border-right:none;
+  border-left: none;
+  position: relative;
+  padding: 20px;
+}
+#video-container {
+	position: absolute;
+}
+#video-container {
+	top:0%;
+	left:0%;
+	height:100%;
+	width:100%;
+	overflow: hidden;
+}
+video {
+	position:absolute;
+	z-index:0;
+}
+video.fillWidth {
+	width: 100%;
+}
+.community{
+background-color:#00BFFF;
+text-align:center;
+margin-left: 0;
+margin-right: 0;
 
+}
+.free{
+background-color:#9A2EFE;
+text-align:center;
+margin-left: 0;
+margin-right: 0;
+
+}
+
+
+
+.homepage-hero-module {
+    border-right: none;
+    border-left: none;
+    position: relative;
+}
+.no-video .video-container video,
+.touch .video-container video {
+    display: none;
+}
+.no-video .video-container .poster,
+.touch .video-container .poster {
+    display: block !important;
+}
+.video-container {
+    position: relative;
+    bottom: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+}
+.video-container .poster img {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+.video-container .filter {
+    z-index: 100;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+.video-container video {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+}
+.video-container video.fillWidth {
+    width: 100%;
+}
+
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  width: 10em;
+  height: 10em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  color: #EDEDED;
+
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.material-icons.md-48 {
+font-size:80px;
+}
 .Good{
 text-align: center;
 font-family: 'Montserrat', sans-serif;
 color:#fff;
 font-size:45px;
 }
+.Good1{
+text-align: center;
+font-family: 'Questrial', sans-serif;
+color:#fff;
+font-size:45px;
+margin-left: auto;
+margin-right: auto;
+}
+.why{
+  background-color: #9A2EFE;
+  -webkit-box-shadow: 0px 16px 23px 10px rgba(209,209,209,0.25);
+-moz-box-shadow: 0px 16px 23px 10px rgba(209,209,209,0.25);
+box-shadow: 0px 16px 23px 10px rgba(209,209,209,0.25);
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+
+}
 .codepravtitle{
-font-family: "Fjalla One";
+font-family: 'Questrial', sans-serif;
 text-align: center;
 color:dimgray;
 font-size:40px;
@@ -26,7 +160,7 @@ color:dimgray;
 background-image: url(../images/bg.jpg);
 margin: 0;
 padding: 0;
-    
+
 }
 body{
 margin: 0;
@@ -39,16 +173,28 @@ padding: 0;
 a:hover{
     cursor: pointer;
 }
-
+.demo{
+  display:block;
+  font-size:0;
+  margin-left:auto;
+  margin-right:auto;
+  width:642px;
+  -webkit-box-shadow: 0px 0px 23px 10px rgba(209,209,209,0.19);
+-moz-box-shadow: 0px 0px 23px 10px rgba(209,209,209,0.19);
+box-shadow: 0px 0px 23px 10px rgba(209,209,209,0.19);
+}
+.image{
+  display: block;
+  font-size:0;
+}
 
 .textright{
-font-family: 'Alegreya Sans', sans-serif;
-text-align: center;  
+font-family: 'Source Sans Pro', sans-serif;
+text-align: center;
+margin-left:auto;
+margin-right:auto;
 color:#fff;
-margin-right: 100px;
-width:30%;
-float:right;
-font-size: 20px;
+width:40%;
 font-size: 20px;
 }
 .sticky {
@@ -64,7 +210,6 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -86,4 +231,30 @@ li a:hover:not(.active) {
 
 .about {
     background-color: #4CAF50;
+}
+.thebg{
+
+
+  background: #2c3e50; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #2c3e50 , #3498db); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #2c3e50 , #3498db); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-box-shadow: 0px 16px 18px -2px rgba(52,152,219,1);
+  -moz-box-shadow: 0px 16px 18px -2px rgba(52,152,219,1);
+  box-shadow: 0px 16px 18px -2px rgba(52,152,219,1);
+}
+
+header {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+}
+.default {
+  top: 0;
+}
+.fixed {
+  top: -80px;
 }
