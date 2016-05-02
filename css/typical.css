@@ -157,12 +157,14 @@ a .fa{
 color:dimgray;
 }
 .intro{
-background-image: url(../images/cloud.jpg);
-margin: 0;
-padding: 0;
-background-repeat: no-repeat;
-background-size: contain;
+  background: url(../images/cloud.jpg);
+     background-repeat: no-repeat;
+     background-position: top;
 }
+.theabout{
+  background-color: #C0C0C0;
+}
+
 body{
 margin: 0;
 padding: 0;
@@ -250,6 +252,42 @@ li a:hover:not(.active) {
 .iconcolor {
   color: white;
 }
+
+.textleft {
+  background-color: #C0C0C0;
+ font-family: 'Alegreya Sans', sans-serif;
+  text-align: left;
+  margin-left:auto;
+  margin-right:auto;
+  color: black;
+  width: 600px;;
+  font-size: 25px;
+  float:left;
+  margin-left: 200px;
+}
+
+.textrightright {
+  background-color: #C0C0C0;
+  font-family: 'Alegreya Sans', sans-serif;
+  text-align: right;
+  margin-left:auto;
+  margin-right: auto;
+  float:right;
+  color:black;
+  width: 600px;
+  font-size: 25px;
+  margin-right: 200px;
+}
+.container{
+  margin: auto 0;
+  margin-left:auto;
+  margin-right:auto
+  width:800px;
+  color: #C0C0C0;
+  height: 400px;
+}
+
+
 .copyright {
 
   font-family: 'Source Sans Pro', sans-serif;
@@ -276,7 +314,10 @@ header {
   top: -80px;
 }
 a { color: black; }
-
+.white {
+  color:white;
+  text-decoration: none; 
+}
 .contact {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 40px;
