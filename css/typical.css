@@ -129,6 +129,16 @@ font-size:45px;
 margin-left: auto;
 margin-right: auto;
 }
+
+.Good11{
+text-align: left;
+font-family: 'Questrial', sans-serif;
+color: black;
+font-size:45px;
+margin-left: auto;
+margin-right: auto;
+}
+
 .why{
   background-color: #9A2EFE;
   -webkit-box-shadow: 0px 16px 23px 10px rgba(209,209,209,0.25);
@@ -163,6 +173,9 @@ color:dimgray;
 }
 .theabout{
   background-color: #C0C0C0;
+ height: inherit;
+ width: inherit;
+
 }
 
 body{
@@ -257,36 +270,37 @@ li a:hover:not(.active) {
   background-color: #C0C0C0;
  font-family: 'Alegreya Sans', sans-serif;
   text-align: left;
-  margin-left:auto;
-  margin-right:auto;
   color: black;
-  width: 600px;;
+  width: 40%;
   font-size: 25px;
   float:left;
-  margin-left: 200px;
+  margin-left: 100px;
 }
 
 .textrightright {
   background-color: #C0C0C0;
   font-family: 'Alegreya Sans', sans-serif;
   text-align: right;
-  margin-left:auto;
-  margin-right: auto;
   float:right;
   color:black;
-  width: 600px;
+  width: 40%;
   font-size: 25px;
-  margin-right: 200px;
+  margin-right: 100px;
 }
 .container{
   margin: auto 0;
   margin-left:auto;
   margin-right:auto
-  width:800px;
+  width: inherit;
   color: #C0C0C0;
-  height: 400px;
+  height: 600px;
+  width: 1400px;
+  margin: 0 auto;
+  overflow: hidden
 }
-
+body {
+  width: inherit;
+}
 
 .copyright {
 
@@ -316,7 +330,7 @@ header {
 a { color: black; }
 .white {
   color:white;
-  text-decoration: none; 
+  text-decoration: none;
 }
 .contact {
   font-family: 'Source Sans Pro', sans-serif;
