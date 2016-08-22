@@ -19,6 +19,7 @@ body {
   /* Set a background color that will be displayed
      while the background image is loading */
   background-color: #464646;
+  width: 100%;
 }
 .header-unit {
   height: 150px;
@@ -142,6 +143,7 @@ text-align: center;
 font-family: 'Montserrat', sans-serif;
 color:#fff;
 font-size:80px;
+padding: 10%;
 }
 .Good1{
 text-align: center;
@@ -334,12 +336,8 @@ li a:hover:not(.active) {
   width: inherit;
   color: #C0C0C0;
   height: 600px;
-  width: 1400px;
   margin: 0 auto;
   overflow: hidden
-}
-body {
-  width: inherit;
 }
 ul{
   margin: 0; padding: 0;
