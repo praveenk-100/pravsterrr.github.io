@@ -1,3 +1,25 @@
+body {
+  /* Location of the image */
+  background-image: url(../images/cloud.jpg);
+
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+
+  /* Background image is fixed in the viewport so that it doesn't move when
+     the content's height is greater than the image's height */
+  background-attachment: fixed;
+
+  /* This is what makes the background image rescale based
+     on the container's size */
+  background-size: cover;
+
+  /* Set a background color that will be displayed
+     while the background image is loading */
+  background-color: #464646;
+}
 .header-unit {
   height: 150px;
   border: 2px solid #000;
@@ -167,12 +189,10 @@ a .fa{
 color:dimgray;
 }
 .intro{
-  background: url(../images/cloud.jpg);
      background-repeat: no-repeat;
      background-position: top;
 }
 .theabout{
-  background-color: #C0C0C0;
  height: inherit;
  width: inherit;
 
@@ -182,6 +202,8 @@ body{
 margin: 0;
 padding: 0;
 }
+
+
 
 .about{
     background-color: aquamarine;
@@ -216,16 +238,12 @@ font-size: 20px;
     z-index: 100;
     border-top: 0;
 }
-ul {
+li{
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     font-family: 'Raleway', sans-serif;
-}
-
-li {
-    float: left;
 }
 
 li a {
@@ -240,6 +258,14 @@ li a:hover:not(.active) {
     background-color: #111;
 }
 
+.footerlink:hover:not(.active) {
+    background-color: #737373;
+}
+.footerlink a {
+  color: transparent;
+  text-decoration: none;
+}
+
 .about {
     background-color: #4CAF50;
 }
@@ -250,7 +276,12 @@ li a:hover:not(.active) {
 }
 
 .footer{
-  background-color: black;
+  background-size: cover;
+  background-color: #464646;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  margin-left: auto;
+  margin-right: auto;
 }
 .social {
   font-family: 'Source Sans Pro', sans-serif;
@@ -260,6 +291,15 @@ li a:hover:not(.active) {
   color: white;
   width:50%;
   font-size: 25px;
+  display: inline;
+}
+.footertext{
+  text-align: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  clear:left;
+  overflow: hidden;
 }
 
 .iconcolor {
@@ -301,6 +341,27 @@ li a:hover:not(.active) {
 body {
   width: inherit;
 }
+ul{
+  margin: 0; padding: 0;
+}
+.li2{
+  margin: 0; padding: 0;
+}
+
+.tablesocial{
+  display: table;
+  margin: 0 auto;
+}
+
+ul#footertext {
+	min-width: 696px;
+	list-style: none;
+  display: fle
+	padding-top: 20px;
+	}
+	ul#footertext li {
+		display: inline;
+	}
 
 .copyright {
 
@@ -312,6 +373,17 @@ body {
   width:50%;
   font-size: 15px;
 }
+
+.footerlinks {
+
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: center;
+  margin-left:auto;
+  margin-right:auto;
+  color: white;
+  font-size: 15px;
+}
+
 header {
   position: fixed;
   left: 0;
@@ -323,6 +395,17 @@ header {
 }
 .default {
   top: 0;
+}
+.footertext123{
+  display:                 flex;
+  display:                 -webkit-flex; /* Safari 8 */
+  flex-wrap:               wrap;
+  -webkit-flex-wrap:       wrap;         /* Safari 8 */
+  justify-content:         center;
+  -webkit-justify-content: center;       /* Safari 8 */
+}
+.footerlink{
+  width:              150px;
 }
 .fixed {
   top: -80px;
@@ -341,4 +424,83 @@ a { color: black; }
 hr {
   colour:white;
   width:80%;
+}
+
+.menu { padding:0; margin:0; width:400px;}
+.menu ul { padding:0; margin:0; list-style:none; border:0;}
+.menu ul li {margin:0; padding:0; border:0;}
+.menu ul li a {display: inline-block; margin:0; text-decoration:none;}
+
+.title{
+  color: white;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+  padding: 0px;
+}
+.half{
+  width: 50%
+}
+.desc{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: white;
+  font-family: 'Alegreya Sans', cursive;
+  font-size: 25px;
+  width: 50%
+}
+table{
+  color:white;
+  margin-left: 25%;
+  width: 50%;
+}
+th{
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+}
+th, td {
+  padding: 20px;
+}
+.titletd{
+  background-color: #cccc00;
+  padding: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  color:black;
+  margin:auto;
+  width: 50%;
+}
+td{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+}
+.hover:hover ul{
+  display:block;
+}
+.titletd:hover ul{
+  display:block;
+}
+
+.section{
+  display: none;
+}
+.entry1{
+  background-color: #9999ff;
+  opacity: 1;
+  color: black;
+}
+.entry3{
+  background-color: #9999ff;
+  opacity: 1;
+  color: black;
+}
+.entry5{
+  background-color: #9999ff;
+  opacity: 1;
+  color: black;
+}
+.arrow{
+  float:right
 }

@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html>
+<!-- Praveen K (C) 2016 Last Edited: 22/08/16 -->
+<head>
+<!--Styling Script-->
+<link href="css/typical.css" rel="stylesheet">
+<!--Google Fonts-->
+<link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans:400,300,500' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200' rel='stylesheet' type='text/css'>
+<!--Material Icons & Font Awesome Links-->
+<link rel="stylesheet" href="fa/css/font-awesome.min.css">
+<!--JS Script-->
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/scrollIt.js"></script>
+<script src="../cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<!--END  OF LINKS-->
+<!--Calling Plugins-->
+<script>
+(function($) {
+  var ost = 0;
+  $(window).scroll(function() {
+    var cOst = $(this).scrollTop();
+
+    if(cOst > 200 && cOst > ost) {
+       $('header').addClass('fixed').removeClass('default');
+    }
+    else {
+       $('header').addClass('default').removeClass('fixed');
+    }
+
+    ost = cOst;
+  });
+})(jQuery);
+</script>
+<title>Praveen K</title>
+</head>
+<body>
+<div class="intro">
+  <div class="wrapper">
+    <header class="default">
+      <div class="na">
+        <ul class="ul1">
+          <ul style="margin-right:250px;float:right;list-style-type:none;">
+            <li style="float:left;"><a class="about" href="index.html">Home</a></li>
+            <li style="float:left;"><a href="https://github.com/pravsterrr">GitHub</a></li>
+          </ul>
+        </ul>
+      </div>
+    </header>
+    <div class="Good">
+      <br><br>
+      PRAVEEN K
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+  </div>
+</div>
+<div data-scroll-index="1">
+  <section id="about">
+    <div class="thebg">
+      <div class="abut">
+        <br><br><br><br><br>
+        <div class="Good1">
+          Developer & Drummer
+        </div>
+        <div class="textright">
+          <h4>Welcome to my website. My name is Praveen and I create apps as a teen. Right now I'm working on a mobile app known as getDone which you can learn more about in the coming days.</h4>
+          <img src="images/photo.jpg" height="25%" width="90%">
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<br><br>
+<div class="theabout">
+  <div class="container">
+    <p id="title" class="title">
+    Projects
+    </p>
+    <p class="desc">
+    Click below to find out more!
+    </p>
+    <div class="projects">
+      <table>
+        <div class="hover">
+          <div class="titletd"  onclick="showDiv();">Web Apps<i class="fa fa-arrow-up arrow" aria-hidden="true"></i></div>
+        </div>
+        <div class="section">
+        <td class="entry1" id="entry1">getDone</td>
+        </div>
+      </table>
+    </div>
+    <table>
+      <div class="titletd" onclick="showDiv2();">HTML <i class="fa fa-arrow-up arrow" aria-hidden="true"></i></td></div>
+      <div class="section">
+        <td class="entry3" id="entry3">This Website</td>
+      </div>
+    </table>
+    <table>
+      <div class="titletd" onclick="showDiv3();">Internet of Things <i class="fa fa-arrow-up arrow" aria-hidden="true"></i></td></div>
+      <div class="section">
+        <td class="entry5" id="entry5">Wirelessly Controlled RGB LED</td>
+      </div>
+    </table>
+  </div>
+</div>
+<br>
+<div class="footer">
+  <div class="copyright">
+    <br>
+    <div class="footertext123" style="list-style-type:none;">
+      <div class="footerlink"><a href="https://www.youtube.com/user/EclipseUKGaming"> <p class="footerlinks">YouTube</p></a></li></div>
+      <div class="footerlink"><a href="https://instagram.com/praveenk._"> <p class="footerlinks">Instagram</p> </a></li></div>
+      <div class="footerlink"><a href="https://github.com/pravsterrr"> <p class="footerlinks">GitHub</p></a></li></div>
+    </div>
+    </ul><br>
+    &copy; 2016 Praveen K. This website may use cookies.
+  </div>
+<br><br>
+</div>
+<!--Calling Scripts-->
+<script>
+$('a[href^="#"]').on('click', function(event) {
+
+    var target = $( $(this).attr('href') );
+
+    if( target.length ) {
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: target.offset().top
+        }, 1000);
+    }
+
+});
+
+$(function(){
+  $.scrollIt();
+});
+// grab an element
+var myElement = document.querySelector("header");
+// construct an instance of Headroom, passing the element
+var headroom  = new Headroom(myElement);
+// initialise
+headroom.init();
+function showDiv() {
+  var displayValue = document.getElementById('entry1').style.opacity;
+
+  if(displayValue == "1"){
+    document.getElementById('entry1').style.cssText = "position:relative;opacity:0; overflow: hidden; transition: all .3s ease .15s;";
+  }
+  else{
+    document.getElementById('entry1').style.cssText = "opacity:1;overflow: hidden; transition: all .3s ease .15s; display:block;";
+  }
+}
+function showDiv2() {
+  var displayValue = document.getElementById('entry3').style.opacity;
+
+  if(displayValue == "1"){
+    document.getElementById('entry3').style.cssText = "position:relative;opacity:0; overflow: hidden; transition: all .3s ease .15s;";
+  }
+  else{
+    document.getElementById('entry3').style.cssText = "opacity:1;overflow: hidden; transition: all .3s ease .15s; display:block;";
+  }
+
+}
+function showDiv3() {
+  var displayValue = document.getElementById('entry5').style.opacity;
+
+    if(displayValue == "1"){
+      document.getElementById('entry5').style.cssText = "position:relative;opacity:0; overflow: hidden; transition: all .3s ease .15s;";
+    }
+    else{
+      document.getElementById('entry5').style.cssText = "opacity:1;overflow: hidden; transition: all .3s ease .15s; display:block;";
+    }
+
+}
+</script>
+<script src="http://localhost:35729/livereload.js"></script>
+</body>
+</html>
