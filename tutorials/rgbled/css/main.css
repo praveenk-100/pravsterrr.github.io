@@ -1,0 +1,126 @@
+li{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+body{
+  background-color: gray;
+  margin: 0px;
+  /* Location of the image */
+  background-image: url(../res/images/cloud.jpg);
+
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+
+  /* Background image is fixed in the viewport so that it doesn't move when
+     the content's height is greater than the image's height */
+  background-attachment: fixed;
+
+  /* This is what makes the background image rescale based
+     on the container's size */
+  background-size: cover;
+
+  /* Set a background color that will be displayed
+     while the background image is loading */
+  background-color: #464646;
+}
+.about {
+    background-color: #4CAF50;
+}
+ul{
+  margin: 0px;
+}
+.Good{
+text-align: center;
+font-family: 'Fjalla One', sans-serif;
+color:#fff;
+font-size:80px;
+padding: 10%;
+}
+.container{
+  background-color: white;
+  width: 75%;
+  margin: 0;
+  margin-left: 12.5%;
+  border-radius: 21px 21px 21px 21px;
+-moz-border-radius: 21px 21px 21px 21px;
+-webkit-border-radius: 21px 21px 21px 21px;
+border: 0px solid #000000;
+}
+.sub{
+  font-family: 'Oxygen', sans-serif;
+  text-align: left;
+  font-size: 30px;
+  font-style: italic;
+  margin-left: 12.5%;
+}
+.subtitles{
+  font-family: 'Baloo Tamma', cursive;
+  text-align: left;
+  font-size: 25px;
+  margin-left: 12.5%;
+}
+.hr1{
+  margin-left: 12.5%;
+  border-color: #9ad6d0;
+  width: 75%;
+}
+.text{
+  font-family: 'Open Sans', sans-serif;
+  text-align: left;
+  font-size: 20px;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+}
+.li{
+  font-family: 'Open Sans', sans-serif;
+  text-align: left;
+  font-size: 20px;
+  margin-left: 13%;
+  margin-right: 12.5%;
+  font-style: italic;
+}
+a {
+  color: orange;
+  text-decoration: none;
+}
+.previewgif {
+  margin-left: 12.5%;
+  height: auto;
+  width: auto;
+  max-width: 300px;
+  max-height: 300px;
+}
+.prettyprint{
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+  font-size: 15px;
+}
+.firmata{
+  margin-left: 12.5%;
+  margin-right:12.5%;
+}
+.console{
+  margin-left: 12.5%;
+  margin-right:12.5%;
+}
+.disqus_thread{
+  margin-left: 12.5%;
+  margin-right:12.5%;
+}

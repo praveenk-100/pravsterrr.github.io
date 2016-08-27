@@ -32,6 +32,9 @@ body {
 #video-container {
 	position: absolute;
 }
+a{
+  text-decoration: none;
+}
 #video-container {
 	top:0%;
 	left:0%;

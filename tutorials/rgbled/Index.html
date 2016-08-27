@@ -1,0 +1,303 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Oxygen|Baloo+Tamma|Open+Sans|Raleway" rel="stylesheet">
+  <link rel='stylesheet' media='screen and (max-width: 1000px)' href='css/mobile.css' />
+  <link rel='stylesheet' media='screen and (min-width: 1001px)' href='css/main.css' />
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  <link rel="stylesheet" href="css/social-likes_birman.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="js/social-likes.min.js"></script>
+
+  <title>Tutorials | Praveen K</title>
+</head>
+<body>
+  <script>
+(function($) {
+  var ost = 0;
+  $(window).scroll(function() {
+    var cOst = $(this).scrollTop();
+
+    if(cOst > 200 && cOst > ost) {
+       $('header').addClass('fixed').removeClass('default');
+    }
+    else {
+       $('header').addClass('default').removeClass('fixed');
+    }
+
+    ost = cOst;
+  });
+})(jQuery);
+</script>
+  <header class="default">
+    <div class="na">
+      <ul class="ul1">
+        <ul style="margin-right:250px;float:right;list-style-type:none;">
+          <li style="float:left;font-family: 'Raleway', sans-serif;" id="li2"><a href="../../index.html">Home</a></li>
+          <li style="float:left;font-family: 'Raleway', sans-serif;" id="li2"><a class="about">Blog</a></li>
+        </ul>
+      </ul>
+    </div>
+  </header>
+  <div class="Good">
+  Wirelessly Control An RGB LED Via a Smartphone App
+</div>
+<br>
+<div class="container">
+<br>
+<p class="sub">
+  Tutorial Posted on 27/08/2016 By Praveen K (admin)
+</p>
+<hr class="hr1">
+<p class="subtitles">
+  Introduction
+</p>
+<div class="previewgif123">
+<img class="previewgif" src="res/images/preview.gif">
+</div>
+<p class="text">
+Welcome to what seems to be my first ever written tutorial. I'm sure you all have a <b>microcontrollers</b> and microprocessors lying about and collecting dust. You've used them for your projects and then eventually, you end up leaving them behind. But today I have an amazing project
+for you all which utlizes electronics that you might just have lying about in your home and the <b>Internet of Things.</b> It is an <b>RGB LED light</b> which you control with a <b>simple mobile app</b>. Keep on reading for the full tutorial and requirements.
+</p>
+<p class="subtitles">
+  Shopping List / Requirements / Things You'll Need
+<p class="text">
+After you've figured it out which subtitle you prefer :), make sure you gather the following. I will be going through what some of them are in the next section.
+<br><br>
+</p>
+<b><p class="subtitles">
+Electronics
+</p></b>
+<p class="list">
+<ul>
+<li class="li">&#8226; 1 Arduino Uno</li>
+<li class="li">&#8226; 1 RGB LED (*cathode)</li>
+<li class="li">&#8226; 3 330 ohm Resistors</li>
+<li class="li">&#8226; An Internet Connected PC running Windows, OS X or Linux</li>
+<li class="li">&#8226; 1 USB type A to type B cable to connect the Arduino</li>
+<li class="li">&#8226; 1 Breadboard</li>
+<li class="li">&#8226; 4 Male to Male Jumper Wires</li>
+<br><br>
+<li class="li">Arduino is an open-source prototyping platform based on easy-to-use hardware and software. It is not as powerful as a microprocessor (like the Raspberry Pi) but rather a microcontroller board based on the ATmega328P.</li>
+</ul>
+</p>
+<p class="text">
+  <b>
+  Please note that this tutorial will work with a RGB LED that has an anode but you will have to take some extra steps when plugging it in to your breadboard. I would recommend reading about it <a href="http://johnny-five.io/examples/led-rgb-anode/">here.</a> Also, please
+  do check your LED's voltage ratings to avoid frying it. Whilst 330 Ohm resitors will work with typical LEDs, not all LEDs are the same.<br><br></b>
+</p>
+<p class="subtitles">
+Software Requirements
+</p>
+<p class="text">
+ (Do not worry about these as we will being installing them in the next step)
+</p>
+<p class="list">
+<ul>
+<li class="li">&#8226; Node.JS with NPM</li>
+<li class="li">&#8226; Ionic, Johnny-Five and Firebase Packages</li>
+<li class="li">&#8226; Arduino IDE</li>
+<li class="li">&#8226; A Google Firebase Account</li>
+<br>
+</ul>
+</p>
+<hr class="hr1">
+<br>
+<p class="subtitles">
+  Setup: Installing Software
+</p>
+<p class="text">
+  Now, the first thing you want to install is the Arduino IDE. If you've played around with an Arduino before, chances are you'll probably have it installed. But if you don't, <a href="https://www.arduino.cc/en/Main/Software">click here to download it</a> for your platform.<br>
+  <br> Once you've installed it, open it up and plug in your Arduino IDE. You want to make sure your Arduino is selected by clicking on the toolbar: <b>Tools</b> followed by <b>Port</b> where you'll want to click on the port that your Arduino is plugged into. <br><br>Next, we want to flash
+  a library to your Arduino. To do that, we can click on (again on the toolbar): <b>File</b> followed by <b>Examples</b> followed by <b>Firmata</b> and finally <b>StandardFirmataPlus</b>. <br>Once you have done that, just press the upload button and after it has finished you can
+  unplug your Arduino as we won't be needing it for some time.<br> The image below shows exactly where StandardFirmataPlus belongs.
+</p>
+<img class="firmata" src="res/images/firmata.png">
+<hr class="hr1">
+<p class="text">
+Next, you want to install is Node.JS. Node.JS is the heart of our project and manages all the plugins and scripts we will be running later in the project. <br><br>To download it for Windows and Mac, <a href="https://nodejs.org/en/download/">click here.</a><br> If you are on Linux, then run the following command inside
+your terminal.
+</p>
+<pre class="prettyprint">
+sudo apt-get install nodejs npm
+</pre>
+<br>
+<p class="text">
+  To verify that you have installed Node.JS with NPM, open up a new terminal/ command prompt window and type in the follow commands.
+</p>
+<pre class="prettyprint">
+node -v<br>npm -v
+</pre>
+<br>
+<p class="text">
+  For more details, including information on troubleshooting, please see the GitHub wiki page <a href="https://github.com/npm/npm/wiki/Troubleshooting">here.</a>
+</p>
+<br>
+<hr class="hr1">
+<p class="subtitles">
+  Installing Node.js Packages
+</p>
+<p class="text">
+Now that we have installed Node.js, we can install 3 packages with the node.js utility. First, open up an elevated terminal/ command prompt windows and type in the following commands (<b>make sure to add sudo if you are on Linux</b>):
+</p>
+<pre class="prettyprint">
+npm install -g johnny-five ionic
+</pre>
+<p class="text">
+  If you encounter any errors during your installation, try to <b>Google</b> them first. If you can't get anywhere then leave a <b>comment</b> down below and I will try to address it. Also, make sure you are running the command <b>as an admin!</b>
+</p>
+<hr class="hr1">
+<br>
+<p class="subtitles">
+Setting up Firebase
+</p>
+<p class="text">
+Before we start, let me talk to you about Firebase. For those who don't know, Firebase is essentially a backend for mobile apps and websites. It is extremely useful when it comes to hosting data, user logins or databases. Firebase has built in frameworks designed for many platforms
+including modern day mobile platforms like iOS and Android. For this project, we will be utilizing Firebase's database to host the current RGB value of our LED in the internet in realtime. Firebase has a free basic plan which is enough for now and the great thing about it, is the
+fact that it is integrated with normal Google accounts.
+</p>
+<p class="text">
+  To start off with, <a href="firebase.google.com">click here to visit the Firebase page</a>.<br><br>
+  Then log into Firebase with your Google account (create one if you haven't got one <a href="https://accounts.google.com/signup">here)</a> by clicking on <b>"Go to console"</b> as shown below. You can then sign in with your Google account.
+</p>
+<img class="console" src="res/images/console.png">
+<p class="text">
+  Next, click on <b>"Create new project".</b> Then enter in your own <b>Project name and the country/ reigon you live in</b>.
+</p>
+<img class="console" src="res/images/create.png">
+<p class="text">
+  Once you completed this step, you'll be taken to the dashboard which is the main panel of your Firebase project. We don't need it now but just make sure to keep this tab open as we will be needing it later.
+</p>
+<hr class="hr1">
+<p class="subtitles">
+Getting our Node Script Ready
+<p>
+<p class="text">
+  Alright, now that we've finished our installations, we can get onto some real coding. Don't worry though as we will only be changing a few lines and I'll guide you through the whole way. <br><br> Firstly, we need to download my code. You can either <a href="https://github.com/pravsterrr/rgbLED.git">clone this Git repository</a> or <a href="https://github.com/pravsterrr/rgbLED/archive/master.zip">
+  download and extract the zip file here.</a><br><br>Once, you have extracted or cloned the files, navigate into the Node Files folder and with your favourite code editor, open the Index.js file.<br><br>It should look something like this:
+</p>
+<img src="res/images/nodejs.png" class="console">
+<p class="text">Ignore all the lines of code apart from "<b>Line 17</b>" where it reads <b>firebase.initializeApp({databaseURL: 'YOUR CUSTOM FIREBASE URL HERE',</b> This is line you want to change with your own details. <br><br> To do this, you need to go back to the
+  with the Firebase dashboard. Then click the third option of the top menu where it says <b>Add Firebase to your web app.</b> A menu will pop up like the following except with your own Firebase details.</p>
+<img src="res/images/copy.png" class="console">
+<p class="text">
+<b>Copy exactly what is circuled in the picture above including the quotes and the comma but not anything before or after the green portion on that line!</b><br><br> <b>Then, swap back to your code editor and remove only from line 17: 'YOUR CUSTOM FIREBASE URL HERE',</b> <br>Again including
+the comma and single quotes.<br><br> Then paste in what you have just copied in the exact same place as the line we have just removed. It should look like this:</p>
+<img src="res/images/previewfinal.png" class="console">
+<p class="text">
+  That's the Internet side of things completed! But once again, make sure to keep the Firebase dashboard open again! Now all that's left is the app!
+</p>
+<hr class="hr1">
+<p class="subtitles">
+  Setting up our Mobile App
+</p>
+<p class="text">
+  The first step is to go back to the root directory of the extracted files. <b>Now we need to go inside the rgbLED folder. </b>This is our app folder. Don't worry about all the complex files and subdirectories, we only need to change one file. <br><br> <b>Go into the www folder followed
+  by the js folder and with your favourite code editor open the app.js file.</b><br><br> It will look like this:</p>
+  <img src="res/images/previewapp.png" class="console">
+  <br><br>
+<p class="text">
+  Don't be overwhelmed by all this code. We only need to change <b>Line 2.</b> To start off with, delete Line 2 leaving nothing but just the line. <br><br> Then go back to Firebase Dashboard and click on "Add Firebase to your web app" again if you closed it last time. <br><br> <b>This time we need
+  to copy the four lines highlighted below. Include everything on these four lines like the symbols, black text and green text.</b></p>
+  <img src="res/images/copy2.png" class="console">
+<p class="text">
+Then go back to your code editor and paste in the copied text into Line 2 of "app.js". As you will see, the code will run over the lines. But don't worry about that. Make sure it looks like this:</p>
+<img src="res/images/appjsfinal.png" class="console">
+<p class="text">
+  Save it and our app is ready. If you want to test it in your browser, open a new command prompt/ terminal window and enter the following command at the root directory of the app (which was were we could see all the complicated files and folders like hooks and www): <br><bR></p>
+<pre class="prettyprint">
+  ionic serve -p 8080
+</pre>
+<p class="text">
+  Then open up your browser and type in localhost:8080. You should see your app. If it doesn't load, then make sure you have port 8080 open. For any help, simply Google about localhost port forwarding. <br><br>Now, we can view our app.<br></p><hr class="hr1">
+<p class="subtitles">
+  Viewing on your Devices
+</p>
+<p class="text">
+  We have two options to build the app for our devices. One is extremely easy and another is slightly harder but it will have the look of an actual single app. <br><br> To build the app with the first method continue reading, but if you want to package this app for iOS or Android,<a href="http://www.neilberry.com/how-to-run-your-ionic-app-on-real-devices/"> click here for a tutorial in doing so.</a>
+  <br><br><p class="text">Now the other way is view your app on iOS and Android, is to use a free app called Ionic View from the App Store/ Play Store. <br><br><a href="http://view.ionic.io/"><img src="res/images/ionicview.png"></a><br><br>Once it is installed it, open it up
+     and click on Sign Up to create an Ionic account.<br><br> Then, open your command prompt/ terminal window again and at the root directory of the app, enter the following command:
+</p>
+<pre class="prettyprint">
+  ionic upload
+</pre>
+<p class="text">
+<b>TIP: If you ecounter an error with an invalid session, enter ionic login and sign in with your credentials; then repeat the above step.<br><br></b>
+This will prompt you to sign in with the Ionic account you just created. Enter in the details and wait for it to upload your app to the cloud.<br><br>Once it has finsihed, go back to your phone and swipe down to refresh the Ionic View app. Your app should pop up. Now tap on it and press download.<br><br>
+Once it has finished, you can tap on View app and the app should load just like it would if it was packaged.<br><br>
+</p>
+<hr class="hr1">
+<p class="subtitles">
+  Final Step: Setting Up Our Board!
+</p>
+<p class="text">
+  Now it is time for one of the funnest steps: preparing our board. <br><br> Follow these schematics and captions and copy out the breadboard layout.<br><br>This was my setup for an LED with a Cathode. If you have an anode, <a href="http://johnny-five.io/examples/led-rgb-anode/">check this link.</a>
+  <img src="res/images/boardsetup3.png" class="console" onload="this.width/=2;this.onload=null;"><br>
+  Step One: Connect the RGB LED to the board as shown. Take note of the longest leg of the diode, this is the Common Cathode.<br><br>Then, connect the three resistors to each leg of the board leaving out the leg with the Common Cathode.<br><br>
+  <img src="res/images/boardsetup2.png" class="console" onload="this.width/=2;this.onload=null;"><br>
+  Step Two: Connect one of the male to male jumper wires to the Common Cathode and to Ground on the Arduino Board.<br><br>
+  <img src="res/images/boardsetup.png" class="console" onload="this.width/=2;this.onload=null;"><br>
+  Step Three: Connect the rest of the male to male jumper wires to the other legs and to the following pins:</p>
+  <p class="list">
+  <ul>
+  <li class="li">&#8226; Red = PWM Pin 5</li>
+  <li class="li">&#8226; Green = PWM Pin 6</li>
+  <li class="li">&#8226; Blue = PWM Pin 3</li>
+  <br>
+  </ul>
+  </p>
+  <p class="text">
+    If you're not sure which leg corresponds to which colour, try connecting the jumper wire of each leg to the 5V supply pin to determine which colour it is.<br><br>Otherwise that is it for setting up the board!
+  </p>
+  <hr class="hr1">
+  <p class="subtitles">
+  Running!
+</p>
+<p class="text">
+If you managed to keep up with me up to this point, I'm sure you will be happy to know that we can now finally test our project!<br><br>To test your RGB LED, plug in your Arduino into your computer.<br><br> Now open a command prompt/ terminal window and navigate
+inside the Node Files folder from our extracted/ cloned folders.<br><br> Now run the command (with sudo for Linux):</p>
+<pre class="prettyprint">
+  node Index.js
+</pre>
+<p class="text">
+  <b>Don't own a device? Well you can still play around the LED in the same way as we tested the mobile app in our browser before.<br><br>Simply run the following command and visit localhost:8080 on the same device!</p></b>
+  <pre class="prettyprint">
+    ionic serve -p 8080
+  </pre>
+<p class="text">
+  That is it! Open up the mobile app and play around with the slider or choose the colour presets. Your LED should hopefully change colour!</p>
+<hr class="hr1">
+<p class="text">
+   <b><br><br>Thanks for reading my first ever written tutorial. If you liked it, please do give a like down below!<br><br>
+  Also, if you have any queries or problems, make sure to leave a comment with the box provided below.</b></p>
+<p class="subtitles">
+  Thank You! ~Praveen K
+<div class="social-likes social-likes_light" style="margin-left:12.5%;margin-right:12.5;" data-url="https://praveenk.co.uk/tutorials/rgbled/" data-title="Praveen K | Tech Tutorials" data-single-title="Share">
+	<div class="facebook" title="Share link on Facebook">Facebook</div>
+	<div class="twitter" title="Share link on Twitter">Twitter</div>
+	<div class="plusone" title="Share link on Google+">Google+</div>
+</div>
+</p>
+<div id="disqus_thread" style="margin-left: 12.5%;margin-right:12.5%;"></div>
+<script>
+
+/**
+ *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+ *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+/*
+var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//praveenk.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</body>
+</html>
