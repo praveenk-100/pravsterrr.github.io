@@ -339,7 +339,6 @@ li a:hover:not(.active) {
   margin-right:auto
   width: inherit;
   color: #C0C0C0;
-  height: 600px;
   margin: 0 auto;
   overflow: hidden
 }
