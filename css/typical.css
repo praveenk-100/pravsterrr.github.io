@@ -1,6 +1,6 @@
 body {
   /* Location of the image */
-  background-image: url(../images/cloud.jpg);
+  background-image: url(../images/bg.jpg);
 
   /* Background image is centered vertically and horizontally at all times */
   background-position: center center;
@@ -143,15 +143,15 @@ font-size:80px;
 }
 .Good{
 text-align: center;
-font-family: 'Montserrat', sans-serif;
-color:#fff;
+font-family: 'Josefin Slab', sans-serif;
+color: black;
 font-size: 16px;
 font-size: 10vw;
 padding: 10%;
 }
 .Good1{
 text-align: center;
-font-family: 'Questrial', sans-serif;
+font-family: 'Open Sans', sans-serif;
 color: black;
 font-size:45px;
 margin-left: auto;
@@ -160,7 +160,7 @@ margin-right: auto;
 
 .Good11{
 text-align: left;
-font-family: 'Questrial', sans-serif;
+font-family: 'Open Sans', sans-serif;
 color: black;
 font-size:45px;
 margin-left: auto;
@@ -184,15 +184,35 @@ color:dimgray;
 font-size:40px;
 height:500px;
 }
-
+.navbar{
+  color:white;
+}
 .slide1{
 float:left:
 width:100px;
 margin-left: 140px;
 float:left;
 }
-a .fa{
-color:dimgray;
+.panel-group{
+  text-decoration:none;
+}
+.panel-group{
+    color:#000000 !important;
+    text-decoration:none;
+
+}
+a:hover,
+.a:hover {
+   text-decoration: none !important;
+}
+
+.bg-menu:hover {
+    background-color:#0079C1;
+    color:#FFFFFF;
+}
+
+.clickable {
+    cursor:pointer;
 }
 .intro{
      background-repeat: no-repeat;
@@ -228,12 +248,12 @@ a:hover{
 }
 
 .textright{
-font-family: 'Source Sans Pro', sans-serif;
+font-family: 'Open Sans', sans-serif;
 text-align: center;
 margin-left:auto;
 margin-right:auto;
 color: black;
-width: 60%;
+
 font-size: 20px;
 }
 .sticky {
@@ -279,6 +299,45 @@ li a:hover:not(.active) {
 
   width: 100%;
   background: white; /* fallback for old browsers */
+  padding-bottom: 20px;
+}
+@media (max-width: @screen-xs) {
+    body{font-size: 10px;}
+}
+
+@media (max-width: @screen-sm) {
+    body{font-size: 14px;}
+    .desctext{width:100%;}
+}
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+.desctext{width: 60%;margin:auto;}
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+.desctext{width: 60%;margin:auto;}
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+.desctext{width: 60%;margin:auto;}
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+.desctext{width:100%;}
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+.desctext{width:100%;}
+}
+
+
+
+h5{
+    font-size: 1.4em;
 }
 
 .footer{
@@ -377,7 +436,7 @@ ul#footertext {
 
 .footerlinks {
 
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-align: center;
   margin-left:auto;
   margin-right:auto;
@@ -433,7 +492,7 @@ hr {
 .menu ul li a {display: inline-block; margin:0; text-decoration:none;}
 
 .title{
-  color: white;
+  color: black;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 50px;
@@ -446,8 +505,8 @@ hr {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  color: white;
-  font-family: 'Alegreya Sans', cursive;
+  color: black;
+  font-family: 'Open Sans', cursive;
   font-size: 25px;
   width: 50%
 }
